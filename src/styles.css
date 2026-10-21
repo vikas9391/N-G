@@ -47,3 +47,26 @@
   .ambient-glow,.floating-petals span,.halo-ornament span,.names span,.event-ornament{animation:none!important}
   .scene-wrap,.hero-content{transform:none!important;transition:none!important}
 }
+
+
+/* Couple's names enter from opposite directions for a more cinematic reveal. */
+.names .name-top { animation: name-drop-in 1.15s cubic-bezier(.18,.82,.22,1) both, name-shimmer 7s ease-in-out 1.2s infinite; }
+.names .name-bottom { animation: name-rise-in 1.25s cubic-bezier(.18,.82,.22,1) .18s both, name-shimmer 7s ease-in-out 1.45s infinite; }
+.names .name-amp { animation: amp-fade-in .75s ease-out .65s both; }
+@keyframes name-drop-in {
+  0% { opacity:0; transform:translateY(-62px) scale(.96); filter:blur(8px); }
+  65% { opacity:1; transform:translateY(5px) scale(1.01); filter:blur(0); }
+  100% { opacity:1; transform:translateY(0) scale(1); filter:blur(0); }
+}
+@keyframes name-rise-in {
+  0% { opacity:0; transform:translateY(62px) scale(.96); filter:blur(8px); }
+  65% { opacity:1; transform:translateY(-5px) scale(1.01); filter:blur(0); }
+  100% { opacity:1; transform:translateY(0) scale(1); filter:blur(0); }
+}
+@keyframes amp-fade-in {
+  0% { opacity:0; transform:scale(.55) rotate(-18deg); }
+  100% { opacity:1; transform:scale(1) rotate(0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .names .name-top, .names .name-bottom, .names .name-amp { animation:none!important; opacity:1; filter:none; transform:none; }
+}

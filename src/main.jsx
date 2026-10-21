@@ -89,7 +89,7 @@ function EventPage({ type, telugu, onBack, onNext }) {
     <div className="eyebrow">{telugu ? (isWedding ? "మంగళ వివాహ ఆహ్వానం" : "నిశ్చితార్థ ఆహ్వానం") : (isWedding ? "THE WEDDING INVITATION" : "THE ENGAGEMENT INVITATION")}</div>
     <h1 className="event-title">{isWedding ? "The Wedding" : "The Engagement"}</h1>
     <p className="telugu-line">{telugu ? "శ్రీ గణేశాయ నమః" : "|| Shree Ganeshaya Namah ||"}</p>
-    <div className="names names-event"><span>Nikitha</span><i>&</i><span>Goutham</span></div>
+    <div className="names names-event"><span>Goutham</span><i>&</i><span>Nikitha</span></div>
     <p className="invite-copy">{telugu
       ? "మా జీవితంలోని ఈ శుభ సందర్భంలో మీ ఆశీస్సులు, సాన్నిధ్యం కోరుకుంటున్నాము."
       : "With the blessings of our families, we request the pleasure of your gracious presence as we celebrate a beautiful new beginning."}</p>
@@ -147,7 +147,7 @@ function App() {
         <div className="hero-reveal crest"><span>✦</span><Flower2 size={19}/><span>✦</span></div>
         <div className="hero-reveal halo-ornament" aria-hidden="true"><span /><span /><span /></div>
         <p className="hero-reveal eyebrow">{telugu ? "ఒక అందమైన ఆరంభానికి ఆహ్వానం" : "A ROYAL INVITATION TO CELEBRATE"}</p>
-        <h1 className="hero-reveal names"><span className="name-top">Nikitha</span><i className="name-amp">&</i><span className="name-bottom">Goutham</span></h1>
+        <h1 className="hero-reveal names"><span className="name-top">Goutham</span><i className="name-amp">&</i><span className="name-bottom">Nikitha</span></h1>
         <p className="hero-reveal Telugu-title">{telugu ? "నిఖిత & గౌతమ్" : "నిఖిత  &  గౌతమ్"}</p>
         <p className="hero-reveal hero-description">{telugu
           ? "ప్రేమ, సంప్రదాయం, కుటుంబ ఆశీస్సులతో మా జీవితాల్లోని ప్రత్యేక క్షణాలను మీతో పంచుకోవాలని ఆహ్వానిస్తున్నాము."
@@ -169,7 +169,7 @@ function App() {
       <div className="hero-caption"><span>EST. WITH LOVE</span><span className="caption-line"/><span>FOREVER BEGINS HERE</span></div>
     </main> : <EventPage type={page} telugu={telugu} onBack={() => setPage("home")} onNext={() => setPage(page === "engagement" ? "wedding" : "engagement")} />}
     <footer className="footer">
-      <span>MADE WITH <Heart size={11} fill="currentColor"/> FOR NIKITHA & GOUTHAM</span>
+      <span>MADE WITH <Heart size={11} fill="currentColor"/> FOR GOUTHAM & NIKITHA</span>
       <button className="music-btn" onClick={toggleMusic}>{musicOn ? <VolumeX size={14}/> : <Music2 size={14}/>} {musicOn ? "Music off" : "Music (optional)"}</button>
     </footer>
   </div>;

@@ -147,7 +147,7 @@ function App() {
         <div className="hero-reveal crest"><span>✦</span><Flower2 size={19}/><span>✦</span></div>
         <div className="hero-reveal halo-ornament" aria-hidden="true"><span /><span /><span /></div>
         <p className="hero-reveal eyebrow">{telugu ? "ఒక అందమైన ఆరంభానికి ఆహ్వానం" : "A ROYAL INVITATION TO CELEBRATE"}</p>
-        <h1 className="hero-reveal names"><span>Nikitha</span><i>&</i><span>Goutham</span></h1>
+        <h1 className="hero-reveal names"><span className="name-top">Nikitha</span><i className="name-amp">&</i><span className="name-bottom">Goutham</span></h1>
         <p className="hero-reveal Telugu-title">{telugu ? "నిఖిత & గౌతమ్" : "నిఖిత  &  గౌతమ్"}</p>
         <p className="hero-reveal hero-description">{telugu
           ? "ప్రేమ, సంప్రదాయం, కుటుంబ ఆశీస్సులతో మా జీవితాల్లోని ప్రత్యేక క్షణాలను మీతో పంచుకోవాలని ఆహ్వానిస్తున్నాము."

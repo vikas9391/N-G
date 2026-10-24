@@ -122,3 +122,40 @@
 @media(prefers-reduced-motion:reduce){
   .opening-curtain,.opening-card,.invitation-opening,.opening-stars{transition:none!important;animation:none!important}
 }
+
+
+/* Interactive keepsake envelope and ornamental frame. */
+.opening-card{padding-top:27px}
+.royal-envelope{position:relative;width:124px;height:82px;margin:0 auto 21px;perspective:700px;filter:drop-shadow(0 9px 15px #0007)}
+.envelope-back,.envelope-pocket{position:absolute;inset:0;border:1px solid #d8b46d; border-radius:3px}
+.envelope-back{background:linear-gradient(135deg,#8c5b2d,#d4ad64 45%,#7b4327)}
+.envelope-pocket{z-index:3;clip-path:polygon(0 0,50% 56%,100% 0,100% 100%,0 100%);background:linear-gradient(135deg,#e4c77e,#98622f 60%,#c49a50)}
+.envelope-flap{position:absolute;inset:0;z-index:4;background:linear-gradient(145deg,#f0d895,#a66d36);clip-path:polygon(0 0,100% 0,50% 61%);transform-origin:top center;transform:rotateX(0);transition:transform .55s cubic-bezier(.2,.7,.25,1);backface-visibility:hidden}
+.envelope-letter{position:absolute;z-index:2;left:9px;right:9px;top:8px;height:67px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;color:#5b281c;background:linear-gradient(135deg,#fff1c9,#dfc07a);border:1px solid #f7e5ad;transition:transform .65s cubic-bezier(.2,.7,.25,1),opacity .35s}
+.envelope-letter span{font-family:"Cormorant Garamond",serif;font-size:18px}
+.envelope-letter i{color:#8d452d;font-size:13px}
+.envelope-letter small{font-size:5px;letter-spacing:2px}
+.envelope-seal{position:absolute;z-index:5;left:50%;top:51%;transform:translate(-50%,-50%);width:29px;height:29px;border-radius:50%;display:flex;align-items:center;justify-content:center;gap:1px;background:radial-gradient(circle at 35% 25%,#f6df9b,#a76a2f 75%);border:1px solid #f4d991;color:#51211b;font-family:"Cormorant Garamond",serif;font-size:9px;box-shadow:0 2px 7px #35100c77;transition:opacity .2s,transform .35s}
+.envelope-seal span{font-size:6px;color:#fff0c0}
+.envelope-open .envelope-flap{transform:rotateX(180deg)}
+.envelope-open .envelope-letter{transform:translateY(-39px) scale(1.04);opacity:0}
+.envelope-open .envelope-seal{opacity:0;transform:translate(-50%,-50%) scale(1.8) rotate(18deg)}
+.opening-corner{position:absolute;z-index:2;color:#d8b46d78;font-size:29px;line-height:1}
+.corner-tl{top:25px;left:27px}.corner-tr{top:25px;right:27px;transform:scaleX(-1)}
+.corner-bl{bottom:25px;left:27px;transform:rotate(180deg)}
+.corner-br{bottom:25px;right:27px;transform:rotate(180deg) scaleX(-1)}
+.opening-card{animation:opening-card-arrive 1s cubic-bezier(.2,.75,.25,1) both, invitation-card-glow 4s ease-in-out 1s infinite}
+@keyframes invitation-card-glow{0%,100%{box-shadow:0 24px 100px #0009,inset 0 0 45px #d8b46d0b}50%{box-shadow:0 24px 110px #000a,inset 0 0 60px #d8b46d16}}
+.opening-card::marker{display:none}
+@media(max-width:520px){
+  .opening-card{padding-top:24px}
+  .royal-envelope{width:112px;height:74px;margin-bottom:17px}
+  .envelope-letter{height:60px}
+  .corner-tl{top:18px;left:18px}.corner-tr{top:18px;right:18px}
+  .corner-bl{bottom:18px;left:18px}.corner-br{bottom:18px;right:18px}
+  .opening-corner{font-size:22px}
+}
+@media(prefers-reduced-motion:reduce){
+  .envelope-flap,.envelope-letter,.envelope-seal{transition:none!important}
+  .opening-card{animation:opening-card-arrive 1ms both!important}
+}

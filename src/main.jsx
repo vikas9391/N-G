@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState, Suspense } from "react";
 import { createRoot } from "react-dom/client";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { Environment, Float, Sparkles, Stars } from "@react-three/drei";
+import { Float, Sparkles, Stars } from "@react-three/drei";
 import gsap from "gsap";
 import { ArrowDown, ArrowLeft, ArrowRight, CalendarDays, Clock3, MapPin, Music2, VolumeX, Heart, Menu, X, Flower2, Sparkles as SparkleIcon } from "lucide-react";
 import * as THREE from "three";
@@ -48,7 +48,8 @@ function PalaceArch() {
   </group>;
 }
 function Scene() {
-  return <Canvas camera={{ position: [0, 0, 9], fov: 42 }} dpr={[1, 1.5]}>
+  const isMobile = typeof window !== "undefined" && window.matchMedia("(max-width: 700px)").matches;
+  return <Canvas camera={{ position: [0, 0, 9], fov: isMobile ? 48 : 42 }} dpr={[1, 1.25]} gl={{ antialias: false, powerPreference: "low-power", alpha: false }}>
     <color attach="background" args={["#170b0b"]} />
     <fog attach="fog" args={["#170b0b", 8, 20]} />
     <ambientLight intensity={1.2} />
@@ -59,9 +60,8 @@ function Scene() {
       <Float speed={1.1} rotationIntensity={.025} floatIntensity={.15}>
         <PalaceArch />
       </Float>
-      <Sparkles count={115} scale={[10, 8, 4]} size={2.2} speed={.24} color="#f3d28d" />
-      <Stars radius={35} depth={12} count={400} factor={2} saturation={.2} fade speed={.25} />
-      <Environment preset="night" />
+      <Sparkles count={isMobile ? 35 : 80} scale={[10, 8, 4]} size={isMobile ? 1.5 : 2} speed={.2} color="#f3d28d" />
+      <Stars radius={35} depth={12} count={isMobile ? 90 : 240} factor={1.7} saturation={.2} fade speed={.18} />
     </Suspense>
   </Canvas>;
 }
@@ -70,7 +70,7 @@ function Header({ page, setPage, telugu, setTelugu }) {
   const go = (p) => { setPage(p); setMenuOpen(false); window.scrollTo({ top: 0, behavior: "smooth" }); };
   return <header className="topbar">
     <a className="brand" href="#home" onClick={(e) => { e.preventDefault(); go("home"); }}>
-      <span className="brand-mark">N<span>&</span>G</span><span className="brand-copy">A ROYAL CELEBRATION<small>శుభమస్తు</small></span>
+      <span className="brand-mark" aria-label="Goutham and Nikitha monogram"><span className="brand-letter">G</span><span className="brand-star">✦</span><span className="brand-letter">N</span></span><span className="brand-copy">A ROYAL CELEBRATION<small>శుభమస్తు</small></span>
     </a>
     <button className="menu-toggle" aria-label="Toggle menu" onClick={() => setMenuOpen(!menuOpen)}>{menuOpen ? <X /> : <Menu />}</button>
     <nav className={menuOpen ? "nav open" : "nav"}>

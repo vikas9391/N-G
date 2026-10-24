@@ -138,7 +138,7 @@ function App() {
       <div className="opening-curtain curtain-left" />
       <div className="opening-curtain curtain-right" />
       <div className="opening-card">
-        <div className="opening-emblem">G <span>✦</span> N</div>
+        <div className={"royal-envelope " + (invitationOpened ? "envelope-open" : "")} aria-hidden="true"><div className="envelope-back" /><div className="envelope-letter"><span>G <i>&</i> N</span><small>WITH LOVE</small></div><div className="envelope-pocket" /><div className="envelope-flap" /><div className="envelope-seal">G<span>✦</span>N</div></div><div className="opening-emblem">G <span>✦</span> N</div>
         <div className="opening-rule">A ROYAL CELEBRATION</div>
         <div className="opening-flourish">❦</div>
         <p className="opening-blessing">శుభమస్తు · शुभमस्तु</p>
@@ -149,7 +149,7 @@ function App() {
         </button>
         <small className="opening-hint">TAP TO REVEAL THE CELEBRATION</small>
       </div>
-      <div className="opening-stars" aria-hidden="true">✦　·　✧　·　✦　·　✧　·　✦</div>
+      <div className="opening-stars" aria-hidden="true">✦　·　✧　·　✦　·　✧　·　✦</div><div className="opening-corner corner-tl" aria-hidden="true">❦</div><div className="opening-corner corner-tr" aria-hidden="true">❦</div><div className="opening-corner corner-bl" aria-hidden="true">❦</div><div className="opening-corner corner-br" aria-hidden="true">❦</div>
     </div>
     <div className="scene-wrap" aria-hidden="true"><Scene /></div>
     <div className="ambient-glow glow-one" aria-hidden="true" />

@@ -115,6 +115,18 @@ function App() {
   const [showStory, setShowStory] = useState(false);
   const heroRef = useRef(null);
   useEffect(() => {
+    // Browsers may restore a page from the back-forward cache with React state intact.
+    const resetInvitationOnRestore = (event) => {
+      if (event.persisted) {
+        setInvitationOpened(false);
+        setPage("home");
+        window.scrollTo({ top: 0, behavior: "auto" });
+      }
+    };
+    window.addEventListener("pageshow", resetInvitationOnRestore);
+    return () => window.removeEventListener("pageshow", resetInvitationOnRestore);
+  }, []);
+  useEffect(() => {
     if (page === "home" && heroRef.current) {
       gsap.fromTo(heroRef.current.querySelectorAll(".hero-reveal"), { y: 26, opacity: 0 }, { y: 0, opacity: 1, duration: 1.1, stagger: .12, ease: "power3.out", delay: .15 });
     }

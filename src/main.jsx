@@ -108,6 +108,7 @@ function EventPage({ type, telugu, onBack, onNext }) {
 }
 function App() {
   const [page, setPage] = useState("home");
+  const [invitationOpened, setInvitationOpened] = useState(false);
   const [pointer, setPointer] = useState({ x: 0, y: 0 });
   const [telugu, setTelugu] = useState(false);
   const [musicOn, setMusicOn] = useState(false);
@@ -133,6 +134,23 @@ function App() {
   };
   return <div className="site-shell" id="home" onPointerMove={trackPointer}
     style={{ "--pointer-x": `${pointer.x * 9}px`, "--pointer-y": `${pointer.y * 7}px` }}>
+    <div className={`invitation-opening ${invitationOpened ? "is-open" : ""}`} aria-hidden={invitationOpened}>
+      <div className="opening-curtain curtain-left" />
+      <div className="opening-curtain curtain-right" />
+      <div className="opening-card">
+        <div className="opening-emblem">G <span>✦</span> N</div>
+        <div className="opening-rule">A ROYAL CELEBRATION</div>
+        <div className="opening-flourish">❦</div>
+        <p className="opening-blessing">శుభమస్తు · शुभमस्तु</p>
+        <h1>Goutham <i>&</i> Nikitha</h1>
+        <p className="opening-copy">A beautiful beginning awaits</p>
+        <button className="open-invitation-btn" onClick={() => setInvitationOpened(true)}>
+          <span>Open Invitation</span><span className="open-arrow">↗</span>
+        </button>
+        <small className="opening-hint">TAP TO REVEAL THE CELEBRATION</small>
+      </div>
+      <div className="opening-stars" aria-hidden="true">✦　·　✧　·　✦　·　✧　·　✦</div>
+    </div>
     <div className="scene-wrap" aria-hidden="true"><Scene /></div>
     <div className="ambient-glow glow-one" aria-hidden="true" />
     <div className="ambient-glow glow-two" aria-hidden="true" />

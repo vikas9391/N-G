@@ -159,3 +159,69 @@
   .envelope-flap,.envelope-letter,.envelope-seal{transition:none!important}
   .opening-card{animation:opening-card-arrive 1ms both!important}
 }
+
+
+/* Responsive polish and refined Goutham–Nikitha monogram. */
+.brand-mark{position:relative;display:flex;align-items:center;justify-content:center;gap:1px;letter-spacing:0;border-color:#d8b46d99;background:radial-gradient(circle at 35% 25%,#543020,#1c0b0b 72%);box-shadow:inset 0 0 0 3px #d8b46d0b,0 0 18px #d8b46d0d}
+.brand-mark .brand-letter{font-family:"Cormorant Garamond",serif;font-size:17px;line-height:1;color:#f5dfaa;font-weight:500}
+.brand-mark .brand-star{font-size:7px;line-height:1;color:#d8b46d;margin:0 1px}
+.scene-wrap{background:radial-gradient(ellipse at center,#351715 0%,#170b0b 70%);contain:paint}
+.scene-wrap canvas{display:block!important;width:100%!important;height:100%!important;touch-action:pan-y}
+.invitation-opening{min-height:100svh;overflow-y:auto;overscroll-behavior:contain;padding:28px 0}
+.opening-card{flex-shrink:0}
+@media(max-width:700px){
+  .topbar{gap:10px}
+  .brand{gap:9px;min-width:0}
+  .brand-mark{width:40px;height:40px;flex:0 0 40px}
+  .brand-copy{font-size:7px;letter-spacing:1px;white-space:nowrap}
+  .brand-copy small{font-size:10px}
+  .hero{min-height:auto;padding:34px 18px 74px}
+  .hero-content{width:100%;max-width:520px}
+  .names{line-height:.86}
+  .names span{font-size:clamp(54px,15vw,82px);letter-spacing:-1.4px}
+  .names i{margin:15px 0 17px}
+  .hero .eyebrow{line-height:1.7;max-width:290px;margin-left:auto;margin-right:auto}
+  .Telugu-title{font-size:14px;line-height:1.8}
+  .hero-description{font-size:18px;line-height:1.5;margin:17px auto 22px}
+  .event-shortcuts{width:100%;max-width:390px}
+  .event-shortcuts button{min-width:0}
+  .event-shortcuts button>span:nth-child(2){min-width:0}
+  .event-shortcuts strong{font-size:17px}
+  .hero-caption{position:relative;left:auto;right:auto;bottom:auto;margin:0 18px 18px}
+  .footer{min-height:54px;height:auto;gap:10px;padding:12px 18px;flex-wrap:wrap}
+  .footer>span{max-width:65%;line-height:1.7}
+  .music-btn{padding:8px 0}
+  .event-page{padding:30px 16px 34px}
+  .event-title{font-size:clamp(44px,12vw,56px)}
+  .names-event span{font-size:clamp(49px,14vw,62px)}
+  .invite-copy{font-size:19px}
+  .detail{overflow-wrap:anywhere}
+  .opening-card{width:calc(100% - 48px);max-width:420px;margin:auto;padding:24px 17px 25px}
+  .opening-card h1{font-size:clamp(31px,8vw,38px)}
+  .opening-copy{margin:11px 0 20px}
+  .opening-hint{font-size:6px;letter-spacing:1.3px}
+  .royal-envelope{margin-bottom:16px}
+}
+@media(max-width:380px){
+  .brand-copy{font-size:6px;letter-spacing:.7px}
+  .brand-copy small{font-size:9px}
+  .brand-mark{width:36px;height:36px;flex-basis:36px}
+  .menu-toggle svg{width:21px;height:21px}
+  .topbar{padding:0 13px}
+  .event-shortcuts{gap:10px}
+  .event-shortcuts button{gap:6px}
+  .event-shortcuts small{font-size:6px}
+  .event-shortcuts strong{font-size:16px}
+  .shortcut-icon{font-size:21px}
+  .shortcut-divider{height:30px}
+  .hero-caption{letter-spacing:.8px;gap:7px}
+  .opening-card{width:calc(100% - 42px)}
+}
+@media(max-height:700px) and (max-width:700px){
+  .invitation-opening{place-items:start center}
+  .opening-card{margin:auto}
+  .opening-stars{position:relative;bottom:auto;margin:20px auto 0;text-align:center}
+}
+@media(prefers-reduced-motion:reduce){
+  .brand-mark,.scene-wrap{transition:none!important}
+}
